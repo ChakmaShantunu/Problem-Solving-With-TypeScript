@@ -36,3 +36,19 @@ class Person {
 const person1 = new Person('John Doe', 30);
 const person2 = new Person('Alice', 25);
 
+interface Item {
+    title: string;
+    rating: number
+}
+
+const filterByRating = (books: Item[]): Item[] => {
+    const filterItems = books.filter(book => book.rating >= 4)
+    return filterItems
+}
+
+const books = [
+  { title: 'Book A', rating: 4.5 },
+  { title: 'Book B', rating: 3.2 },
+  { title: 'Book C', rating: 5.0 },
+];
+
