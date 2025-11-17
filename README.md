@@ -1,10 +1,13 @@
 
-Provide an example of using union and intersection types in TypeScript.
+## Provide an example of using union and intersection types in TypeScript. --*
 
+## Union type মানে একটি variable একাধিক type নিতে পারে 
 ![Logo](/src/images/code.png)
+
+## Intersection type মানে একটি variable দুই বা তার বেশি type এর সব properties রাখতে পারে।
 ![Logo](/src/images/code2.png)
 
-**-- What are some differences between interfaces and types in TypeScript? --*
+## What are some differences between interfaces and types in TypeScript? --*
 
 -- TypeScript এ Interface এবং Type এর ব্যবহার
 
