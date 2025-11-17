@@ -29,7 +29,7 @@ class Person {
     }
 
     getDetails() {
-        return `'Name: ${this.name}, Age: ${this.age}'`
+        return `Name: ${this.name}, Age: ${this.age}`
     }
 }
 
@@ -81,7 +81,7 @@ interface Book {
 
 const printBookDetails = (book: Book) => {
     const availability = book.isAvailable === true ? "Yes" : "No"
-    console.log(`Title: ${book.title}, author: ${book.author}, publishedYear: ${book.publishedYear}, isAvailable: ${availability}`)
+    console.log(`Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availability}`)
 }
 
 const myBook: Book = {
