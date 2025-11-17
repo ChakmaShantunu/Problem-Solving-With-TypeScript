@@ -29,12 +29,14 @@ class Person {
     }
 
     getDetails() {
-        return `Name: ${this.name}, Age: ${this.age}`
+        return `'Name: ${this.name}, Age: ${this.age}'`
     }
 }
 
 const person1 = new Person('John Doe', 30);
+
 const person2 = new Person('Alice', 25);
+
 
 interface Item {
     title: string;
@@ -143,5 +145,4 @@ const products = [
     { name: 'Bag', price: 50, quantity: 1, discount: 20 },
 ];
 
-console.log(calculateTotalPrice(products));
 
