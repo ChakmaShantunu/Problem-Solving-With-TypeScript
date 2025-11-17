@@ -78,16 +78,43 @@ interface Book {
 }
 
 const printBookDetails = (book: Book) => {
-    const availability =  book.isAvailable === true ? "Yes" : "No"
+    const availability = book.isAvailable === true ? "Yes" : "No"
     console.log(`Title: ${book.title}, author: ${book.author}, publishedYear: ${book.publishedYear}, isAvailable: ${availability}`)
 }
 
 const myBook: Book = {
-  title: 'The Great Gatsby',
-  author: 'F. Scott Fitzgerald',
-  publishedYear: 1925,
-  isAvailable: true,
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    publishedYear: 1925,
+    isAvailable: true,
 };
 
 printBookDetails(myBook);
+
+
+
+
+const getUniqueValues = (array1: (string | number)[], array2: (string | number)[]) => {
+    let result: (string | number)[] = []
+    for (let value of array1) {
+        result[result.length] = value
+    }
+    for (let value of array2) {
+        let duplicate = false
+        for (let number of result) {
+            if (number === value) {
+                duplicate = true;
+                break;
+            }
+        }
+        if (!duplicate) {
+            result[result.length] = value
+        }
+    }
+    return result
+}
+
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
+console.log(getUniqueValues(array1, array2));
 
