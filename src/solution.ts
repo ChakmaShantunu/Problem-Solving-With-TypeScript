@@ -94,7 +94,7 @@ printBookDetails(myBook);
 
 
 
-const getUniqueValues = (array1: (string | number)[], array2: (string | number)[]) => {
+const getUniqueValues = (array1: (string | number)[], array2: (string | number)[]): (string | number)[] => {
     let result: (string | number)[] = []
     for (let value of array1) {
         result[result.length] = value
@@ -116,5 +116,32 @@ const getUniqueValues = (array1: (string | number)[], array2: (string | number)[
 
 const array1 = [1, 2, 3, 4, 5];
 const array2 = [3, 4, 5, 6, 7];
-console.log(getUniqueValues(array1, array2));
+
+interface Products {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number
+}
+
+const calculateTotalPrice = (products: Products[]): number => {
+    if(products.length === 0) return 0;
+    const total = products.reduce((sum, product) => {
+        let productPrice = product.price * product.quantity
+        if (product.discount) {
+            productPrice = productPrice - (productPrice * (product.discount / 100))
+        }
+        return sum + productPrice
+    }, 0)
+    return total
+
+}
+
+const products = [
+    { name: 'Pen', price: 10, quantity: 2 },
+    { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
+    { name: 'Bag', price: 50, quantity: 1, discount: 20 },
+];
+
+console.log(calculateTotalPrice(products));
 
